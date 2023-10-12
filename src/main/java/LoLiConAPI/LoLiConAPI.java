@@ -36,18 +36,19 @@ public class LoLiConAPI {
         HttpResponse<String> res = null;
         try {
             res = client.send(req, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
         Gson gson = new Gson();
 
-        JsonObject result =  gson.fromJson(res.body(),JsonObject.class);
-        JsonObject rs1 = result.getAsJsonArray("data").get(0).getAsJsonObject();
-        JsonObject rs2 = rs1.getAsJsonObject("urls");
-
-        return rs2.get("original").getAsString();
+        JsonObject result = null;
+        if (res != null) {
+            result = gson.fromJson(res.body(), JsonObject.class);
+            JsonObject rs1 = result.getAsJsonArray("data").get(0).getAsJsonObject();
+            JsonObject rs2 = rs1.getAsJsonObject("urls");
+            return rs2.get("original").getAsString();
+        }
+        return null;
     }
 
     public static void main(String[] args) {

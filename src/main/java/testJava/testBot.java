@@ -15,7 +15,7 @@ import java.net.http.HttpResponse;
 import java.security.NoSuchAlgorithmException;
 
 public class testBot {
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+    public static void main(String[] args) throws IOException {
         HttpClient client = HttpClient.newHttpClient();
 
         LoLiConAPI loLiConAPI = new LoLiConAPI();
@@ -40,7 +40,7 @@ public class testBot {
                 .POST(HttpRequest.BodyPublishers.ofString(jsonObject.toString()))
                 .build();
 
-        HttpResponse<String> res = null;
+        HttpResponse<String> res;
 
         try {
             res = client.send(req,HttpResponse.BodyHandlers.ofString());

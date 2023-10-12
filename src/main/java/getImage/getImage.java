@@ -9,7 +9,7 @@ public class getImage {
     String url = "";
 
     public getImage(){
-    };
+    }
 
     public static void main(String[] args) throws IOException {
         URL url = new URL("https://www.bilibili.com/");
