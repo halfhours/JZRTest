@@ -10,8 +10,5 @@
         <module name="JZRTest" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="JZRTest" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
