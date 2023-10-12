@@ -12,7 +12,6 @@ import java.net.URLConnection;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.security.NoSuchAlgorithmException;
 
 public class testBot {
     public static void main(String[] args) throws IOException {

@@ -41,7 +41,7 @@ public class LoLiConAPI {
         }
         Gson gson = new Gson();
 
-        JsonObject result = null;
+        JsonObject result;
         if (res != null) {
             result = gson.fromJson(res.body(), JsonObject.class);
             JsonObject rs1 = result.getAsJsonArray("data").get(0).getAsJsonObject();
