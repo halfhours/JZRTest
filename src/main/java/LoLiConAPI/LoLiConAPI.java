@@ -10,8 +10,12 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class LoLiConAPI {
+    private static final Logger logger = Logger.getLogger(String.valueOf(LoLiConAPI.class));
+
     public LoLiConAPI(){}
 
     public String getimageUrl(String ... args) {
@@ -37,7 +41,7 @@ public class LoLiConAPI {
         try {
             res = client.send(req, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            logger.log(Level.WARNING,e.toString());
         }
         Gson gson = new Gson();
 
@@ -66,7 +70,7 @@ public class LoLiConAPI {
         try {
             processBuilder.start();
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.log(Level.WARNING,e.toString());
         }
     }
 }
