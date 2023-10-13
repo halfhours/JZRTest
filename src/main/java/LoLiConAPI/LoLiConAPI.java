@@ -21,7 +21,7 @@ import java.util.logging.Logger;
 public class LoLiConAPI {
     private setu[] setu;
     private Error error;
-    private Properties properties = new Properties();
+    private final Properties properties = new Properties();
 
     private static final Logger logger = Logger.getLogger(String.valueOf(LoLiConAPI.class));
 
