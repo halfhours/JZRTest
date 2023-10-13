@@ -18,7 +18,7 @@ public class testBot {
         HttpClient client = HttpClient.newHttpClient();
 
         LoLiConAPI loLiConAPI = new LoLiConAPI();
-        String imageURL = loLiConAPI.getimageUrl("少女","黑丝");
+        String imageURL = loLiConAPI.getimageUrl(false, "少女","黑丝");
         URL url = new URL(imageURL);
         URLConnection con = url.openConnection();
         InputStream ip = con.getInputStream();
