@@ -17,8 +17,8 @@ public class testBot {
     public static void main(String[] args) throws IOException {
         HttpClient client = HttpClient.newHttpClient();
 
-        LoLiConAPI loLiConAPI = new LoLiConAPI();
-        String imageURL = loLiConAPI.getimageUrl(false, "少女","黑丝");
+        LoLiConAPI loLiConAPI = new LoLiConAPI(1, false, "少女", "黑丝");
+        String imageURL = loLiConAPI.getRandomUrl();
         URL url = new URL(imageURL);
         URLConnection con = url.openConnection();
         InputStream ip = con.getInputStream();
